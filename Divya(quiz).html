@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #quizForm {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #quizForm:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #007BFF;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        input[type="radio"]:checked {
+            background-color: #007BFF;
+            border-color: #007BFF;
+        }
+
+        input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        label:hover {
+            color: #007BFF;
+        }
+
+        input[type="button"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #218838;
+        }
+
+        input[type="button"]:active {
+            background-color: #1e7e34;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+        }
+
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: #007BFF;
+            margin-top: 20px;
+        }
+
+        .feedback {
+            font-size: 16px;
+            text-align: center;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .timer {
+            font-size: 18px;
+            text-align: center;
+            color: #ff6347;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="quizForm">
+        <h2>Interactive Quiz</h2>
+        
+        <div class="timer" id="timer">Time Left: 30s</div>
+        
+        <div class="question">
+            Q1. What does HTML stand for?<br>
+            <input type="radio" name="question1" value="Hyper text Markup language" id="q1_1"> <label for="q1_1">Hyper text Markup language</label><br>
+            <input type="radio" name="question1" value="Hyperlinks and Text Markup Language" id="q1_2"> <label for="q1_2">Hyperlinks and Text Markup Language</label><br>
+            <input type="radio" name="question1" value="Home tool Markup language" id="q1_3"> <label for="q1_3">Home tool Markup language</label><br>
+            <input type="radio" name="question1" value="Home link Markup language" id="q1_4"> <label for="q1_4">Home link Markup language</label><br>
+        </div>
+        
+        <hr>
+
+        <div class="question">
+            Q2. Who is making the web standards?<br>
+            <input type="radio" name="question2" value="The world wide web consortium" id="q2_1"> <label for="q2_1">The World Wide Web Consortium</label><br>
+            <input type="radio" name="question2" value="Mozilla" id="q2_2"> <label for="q2_2">Mozilla</label><br>
+            <input type="radio" name="question2" value="Google" id="q2_3"> <label for="q2_3">Google</label><br>
+            <input type="radio" name="question2" value="Microsoft" id="q2_4"> <label for="q2_4">Microsoft</label><br>
+        </div>
+
+        <input type="button" value="Submit Quiz" onclick="result()">
+        
+        <div class="result" id="quizResult" style="display: none;"></div>
+        <div class="feedback" id="feedback" style="display: none;"></div>
+    </form>
+
+    <script>
+        var totalTime = 30;  
+        var currentTime = totalTime;
+        var timerInterval;
+
+       
+        function updateTimer() {
+            document.getElementById("timer").textContent = "Time Left: " + currentTime + "s";
+            document.title = "Time Left: " + currentTime + "s - Interactive Quiz"; 
+            
+            currentTime--;
+            if (currentTime < 0) {
+                clearInterval(timerInterval);  
+                alert("Time's up! The quiz will be submitted now.");
+                result(); 
+            }
+        }
+
+        
+        function startTimer() {
+            currentTime = totalTime;
+            timerInterval = setInterval(updateTimer, 1000);  
+        }
+
+        function result() {
+            clearInterval(timerInterval);  
+
+            var score = 0;
+            var totalQuestions = 2;
+
+           
+            var q1 = document.querySelector('input[name="question1"]:checked');
+            if (q1 && q1.value == "Hyper text Markup language") {
+                score++;
+            }
+
+           
+            var q2 = document.querySelector('input[name="question2"]:checked');
+            if (q2 && q2.value == "The world wide web consortium") {
+                score++;
+            }
+
+            
+            var quizResult = document.getElementById('quizResult');
+            var feedback = document.getElementById('feedback');
+
+            quizResult.style.display = "block";
+            feedback.style.display = "block";
+
+            quizResult.textContent = "You scored " + score + " out of " + totalQuestions;
+
+            if (score === totalQuestions) {
+                feedback.textContent = "Great job! You got all the answers correct!";
+            } else if (score > 0) {
+                feedback.textContent = "Good effort! Keep learning!";
+            } else {
+                feedback.textContent = "Oops! Looks like you need some practice.";
+            }
+        }
+
+        
+        window.onload = function() {
+            startTimer();
+        }
+    </script>
+
+</body>
+</html>
