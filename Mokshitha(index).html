@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My QuizApp</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        #box {
+            background-color: #beb8b8;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #startbutton, #dailychallenges {
+            background-color: rgb(45, 167, 244);
+            border-radius: 3px;
+            border: 2px solid black;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease; 
+        }
+
+        #startbutton:hover {
+            transform: scale(1.1); 
+            background-color: rgb(35, 142, 214); 
+        }
+
+        #dailychallenges {
+            background-color: rgb(40, 161, 236);
+            border-radius: 3px;
+            border: 2px solid #000000;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease; 
+        }
+
+        #dailychallenges:hover {
+            transform: scale(1.1); 
+            background-color: rgb(34, 140, 200); 
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 3px;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Welcome to the Quiz App</h1>
+        <input type="text" placeholder="Enter your name">
+        <button id="startbutton">Start Test</button><br>
+        <button id="dailychallenges">Daily Challenges</button>
+    </div>
+    <script src="Mokshitha(index).js"></script>
+</body>
+</html>
