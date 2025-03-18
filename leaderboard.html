@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .submit {
+            background-color: #ff7eb3;
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 126, 179, 0.3);
+        }
+        .submit:hover {
+            background-color: #ff5a92;
+            transform: scale(1.05);
+        }
+        .reset {
+            background-color: #00c6ff;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 198, 255, 0.3);
+        }
+        .reset:hover {
+            background-color: #009edb;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🏆 Leaderboard</h2>
+        <div class="buttons">
+            <button class="submit">Play Again</button>
+            <button class="reset">Restart Quiz</button>
+        </div>
+    </div>
+</body>
+</html>
