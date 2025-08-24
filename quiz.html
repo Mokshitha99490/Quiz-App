@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h2 id="question-category"></h2> <!-- Added for daily challenge heading -->
+        <p id="question-text"></p>
+        <div id="options"></div>
+        <p id="timer">Time left: <span id="time-left"></span> seconds</p>
+        <button onclick="skipQuestion()">Skip</button>
+        <button onclick="submitAnswer()">Submit</button>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
