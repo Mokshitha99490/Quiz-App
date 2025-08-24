@@ -1,0 +1,62 @@
+[
+    {
+        "category": "Aptitude",
+        "question": "What is 12 + 15?",
+        "options": ["25", "27", "28", "30"],
+        "answer": "27"
+    },
+    {
+        "category": "Git Commands",
+        "question": "Which command initializes a new Git repository?",
+        "options": ["git init", "git start", "git new", "git create"],
+        "answer": "git init"
+    },
+    {
+        "category": "Puzzles",
+        "question": "What comes next in the series: 2, 6, 12, 20, ...?",
+        "options": ["28", "30", "32", "36"],
+        "answer": "30"
+    },
+    {
+        "category": "Science",
+        "question": "What is the chemical symbol for water?",
+        "options": ["H2O", "O2", "CO2", "H2"],
+        "answer": "H2O"
+    },
+    {
+        "category": "History",
+        "question": "Who was the first President of the United States?",
+        "options": ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"],
+        "answer": "George Washington"
+    },
+    {
+        "category": "Geography",
+        "question": "Which is the largest continent by area?",
+        "options": ["Africa", "Asia", "Europe", "North America"],
+        "answer": "Asia"
+    },
+    {
+        "category": "Math",
+        "question": "What is the square root of 64?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "8"
+    },
+    {
+        "category": "Literature",
+        "question": "Who wrote 'Romeo and Juliet'?",
+        "options": ["William Shakespeare", "Charles Dickens", "Mark Twain", "Jane Austen"],
+        "answer": "William Shakespeare"
+    },
+    {
+        "category": "Technology",
+        "question": "What does 'HTTP' stand for?",
+        "options": ["HyperText Transfer Protocol", "HyperText Transmission Protocol", "HyperText Transfer Program", "HyperText Transmission Program"],
+        "answer": "HyperText Transfer Protocol"
+    },
+    {
+        "category": "Movies",
+        "question": "Which movie won the Oscar for Best Picture in 2020?",
+        "options": ["1917", "Joker", "Parasite", "Once Upon a Time in Hollywood"],
+        "answer": "Parasite"
+    }
+]
