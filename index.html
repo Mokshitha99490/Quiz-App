@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome to the Quiz App</h2>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="startQuiz()">Start Quiz</button>
+        <button onclick="startDailyChallenge()">Daily Challenge</button>
+    </div>
+
+    <script>
+        function startQuiz() {
+            let username = document.getElementById('username').value;
+            if (username.trim() === "") {
+                alert("Please enter your name.");
+                return;
+            }
+            localStorage.setItem("quizUser", username);
+            window.location.href = "quiz.html";
+        }
+
+        function startDailyChallenge() {
+            let username = document.getElementById('username').value;
+            if (username.trim() === "") {
+                alert("Please enter your name.");
+                return;
+            }
+            localStorage.setItem("quizUser", username);
+            localStorage.setItem("dailyChallenge", true);
+            window.location.href = "quiz.html";
+        }
+    </script>
+</body>
+</html>
